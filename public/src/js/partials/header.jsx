@@ -1,8 +1,10 @@
+var MessageCount = require('../components/messageCount');
+
 var Header = React.createClass({
 	render: function () {
 		return (
 			<header className="header">
-        <h1>Yo</h1>
+        <MessageCount />
 			</header>
 		)
 	}

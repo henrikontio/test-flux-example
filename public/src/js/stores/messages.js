@@ -25,7 +25,7 @@ var messages = {
       from: 1,
       timestamp: 1424469794000
     }]
-  }, 
+  },
   3: {
     user: {
       profilePicture: '',
@@ -38,18 +38,22 @@ var messages = {
       currentUser: 1424469794080
     },
     messages: [{
-      contents: 'Motherfucker!',
+      contents: 'YOU DID WHAT???',
       from: 3,
       timestamp: 1424469793023
     }, {
       contents: 'Huh?',
       from: 1,
       timestamp: 1424469794000
+    }, {
+      contents: '...',
+      from: 3,
+      timestamp: 1424469803023
     }]
   }
 };
 
-var openChatID = parseInt(Object.keys(messages)[1], 10);
+var openChatID = parseInt(Object.keys(messages)[0], 10);
 
 var messagesStore = assign({}, EventEmitter.prototype, {
   addChangeListener: function (callback) {
@@ -66,6 +70,9 @@ var messagesStore = assign({}, EventEmitter.prototype, {
   },
   getAllChats: function () {
     return messages;
+  },
+  getChatMessageCount: function (id) {
+    return messages[id].messages.length;
   }
 });
 
